@@ -1,18 +1,24 @@
+'use client';
+
+import useSWR from 'swr';
 import Link from 'next/link';
+import { getAllPosts } from '@/services/getPosts';
 
-type Props = {
-  posts: any[];
-};
-
-const Posts = ({ posts }: Props) => {
+const Posts = () => {
+  const { data: posts, isLoading } = useSWR('posts', getAllPosts);
   return (
-    <ul>
-      {posts.map((post: any) => (
-        <li key={post.id}>
-          <Link href={`/blog/${post.id}`}>{post.title}</Link>
-        </li>
-      ))}
-    </ul>
+    <>
+      {isLoading && <h3>Loading...</h3>}
+      {!isLoading && (
+        <ul>
+          {posts.map((post: any) => (
+            <li key={post.id}>
+              <Link href={`/blog/${post.id}`}>{post.title}</Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
   );
 };
 
