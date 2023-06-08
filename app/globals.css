@@ -3,7 +3,7 @@
 }
 
 :root {
-  --color-bg: #2C2C32;
+  --color-bg: #2c2c32;
   --color-active: #0f7dc6;
 }
 
@@ -73,6 +73,6 @@ form button {
   border: none;
 }
 
-input[type="search"] {
+input[type='search'] {
   padding: 0.5rem 1rem;
 }
