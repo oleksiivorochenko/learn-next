@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
@@ -12,6 +12,7 @@
     "@types/react": "18.2.8",
     "@types/react-dom": "18.2.4",
     "next": "13.4.4",
+    "next-auth": "^4.22.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "swr": "^2.1.5",
